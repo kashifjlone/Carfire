@@ -14,6 +14,6 @@
 | MVP-03 | Next.js Storefront & VDP Catalog | §2.4, §4.2 | verified | `src/app/storefront/page.tsx`, `src/app/vehicles/[slug]/page.tsx` (SSR Next.js 15 build clean) | 2026-11-25 |
 | MVP-04 | Interactive Finance Repayment Calculator | §2.4 | verified | `src/components/storefront/FinanceCalculator.tsx` (weekly/monthly slider + indicative disclaimer) | 2026-11-25 |
 | MVP-05 | WhatsApp Click-to-Chat Deep-Link | §2.4 | verified | `src/components/storefront/WhatsAppButton.tsx` (pre-filled Year/Make/Model/Price deep-link) | 2026-11-25 |
-| MVP-06 | Inbound Lead Management & CRM Kanban | §2.4, §5.1 | verified | `src/lib/crm/actions.ts` (6-stage form security pipeline, lead activity logging) | 2026-11-25 |
-| MVP-07 | Stripe AU Billing & Tax Invoices | §9 | planned | | |
+| MVP-06 | Inbound Lead Management & CRM Kanban | §2.4, §5.1 | verified | `src/app/admin/leads/page.tsx`, `LeadsKanban.tsx` (5 pipeline stages, 1-click stage updates) | 2026-11-25 |
+| MVP-07 | Stripe AU Billing & Tax Invoices | §9 | verified | `src/lib/billing/stripe.ts`, `src/app/admin/billing/page.tsx` (Starter/Growth/Scale plans, 10% GST breakdown) | 2026-11-25 |
 | MVP-08 | Automated Playwright End-to-End Suite | §10.2 | planned | | |
