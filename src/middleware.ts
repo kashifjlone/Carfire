@@ -17,7 +17,7 @@ export function middleware(request: NextRequest) {
 
   // Forward normalised host header to Server Components & Route Handlers
   const requestHeaders = new Headers(request.headers);
-  requestHeaders.set("x-forwarded-host", normalisedHost);
+  requestHeaders.set("x-forwarded-host", host);
   requestHeaders.set("x-tenant-host", normalisedHost);
 
   return NextResponse.next({

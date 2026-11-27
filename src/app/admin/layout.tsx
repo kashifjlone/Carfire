@@ -5,6 +5,7 @@ import {
   FileSpreadsheet,
   Users,
   CreditCard,
+  Globe,
   Settings,
   ExternalLink,
   Shield,
@@ -70,6 +71,14 @@ export default function AdminLayout({
           >
             <CreditCard className="w-4 h-4 text-amber-400" />
             <span>Billing & Tax Invoices</span>
+          </Link>
+
+          <Link
+            href="/admin/domains"
+            className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-800 hover:text-white transition text-slate-300"
+          >
+            <Globe className="w-4 h-4 text-cyan-400" />
+            <span>Domains & DNS</span>
           </Link>
 
           <div className="pt-4 pb-1">
