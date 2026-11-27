@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: australian-dealer-saas:latest
+    container_name: autos-saas-prod
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - HOSTNAME=0.0.0.0
+      - NEXT_TELEMETRY_DISABLED=1
+      # Supabase Production URL & Keys
+      - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL:-https://placeholder.supabase.co}
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY:-placeholder}
+      - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY:-placeholder}
+      # Cloudflare R2 Storage
+      - R2_ACCOUNT_ID=${R2_ACCOUNT_ID:-placeholder}
+      - R2_ACCESS_KEY_ID=${R2_ACCESS_KEY_ID:-placeholder}
+      - R2_SECRET_ACCESS_KEY=${R2_SECRET_ACCESS_KEY:-placeholder}
+      - R2_BUCKET_NAME=${R2_BUCKET_NAME:-dealer-media-prod}
+      - NEXT_PUBLIC_R2_PUBLIC_URL=${NEXT_PUBLIC_R2_PUBLIC_URL:-https://media.apexautos.com.au}
+      # Stripe Australia
+      - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY:-placeholder}
+      - STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET:-placeholder}
+      # Upstash Redis & Turnstile
+      - UPSTASH_REDIS_REST_URL=${UPSTASH_REDIS_REST_URL:-https://placeholder.upstash.io}
+      - UPSTASH_REDIS_REST_TOKEN=${UPSTASH_REDIS_REST_TOKEN:-placeholder}
+      - CLOUDFLARE_TURNSTILE_SECRET_KEY=${CLOUDFLARE_TURNSTILE_SECRET_KEY:-placeholder}
+      - NEXT_PUBLIC_TURNSTILE_SITE_KEY=${NEXT_PUBLIC_TURNSTILE_SITE_KEY:-placeholder}
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:3000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s

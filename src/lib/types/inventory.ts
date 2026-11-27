@@ -31,6 +31,7 @@ export interface Vehicle {
   ppsr_status: "clear" | "interest_registered" | "not_checked";
   statutory_warranty_class: StatutoryWarrantyClass;
   niche_attributes: Record<string, unknown>;
+  cover_image_key?: string | null;
   published_at?: string | null;
   created_at: string;
   updated_at: string;
