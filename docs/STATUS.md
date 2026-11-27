@@ -16,4 +16,4 @@
 | MVP-05 | WhatsApp Click-to-Chat Deep-Link | §2.4 | verified | `src/components/storefront/WhatsAppButton.tsx` (pre-filled Year/Make/Model/Price deep-link) | 2026-11-25 |
 | MVP-06 | Inbound Lead Management & CRM Kanban | §2.4, §5.1 | verified | `src/app/admin/leads/page.tsx`, `LeadsKanban.tsx` (5 pipeline stages, 1-click stage updates) | 2026-11-25 |
 | MVP-07 | Stripe AU Billing & Tax Invoices | §9 | verified | `src/lib/billing/stripe.ts`, `src/app/admin/billing/page.tsx` (Starter/Growth/Scale plans, 10% GST breakdown) | 2026-11-25 |
-| MVP-08 | Automated Playwright End-to-End Suite | §10.2 | planned | | |
+| MVP-08 | Automated Playwright End-to-End Suite | §10.2 | verified | Playwright Chromium (9/9 E2E tests passing in 7.7s: Storefront, VDP, Inventory, CRM, Billing) | 2026-11-27 |
