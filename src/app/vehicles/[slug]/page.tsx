@@ -6,6 +6,7 @@ import { createClient } from "@/lib/supabase/server";
 import { StorefrontHeader } from "@/components/storefront/StorefrontHeader";
 import { FinanceCalculator } from "@/components/storefront/FinanceCalculator";
 import { WhatsAppButton } from "@/components/storefront/WhatsAppButton";
+import { TradeInAppraisalWidget } from "@/components/storefront/TradeInAppraisalWidget";
 import { formatAud, formatKm } from "@/lib/utils";
 import type { PublicVehicleDetail } from "@/lib/types/inventory";
 import { Shield, CheckCircle2, AlertCircle, Phone, Calendar, Gauge, Fuel } from "lucide-react";
@@ -245,6 +246,13 @@ export default async function VehicleDetailPage({ params }: VdpPageProps) {
 
             {/* Interactive Finance Repayment Calculator */}
             <FinanceCalculator totalPriceCents={vehicle.price.total_drive_away_cents} />
+
+            {/* Online Trade-In Appraisal & Valuation Widget */}
+            <TradeInAppraisalWidget
+              vehicleTitle={title}
+              vehicleStockNumber={vehicle.stock_number}
+              vehiclePriceCents={vehicle.price.total_drive_away_cents}
+            />
           </div>
 
           {/* Sidebar Column: Price & Conversion CTAs */}

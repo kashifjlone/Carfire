@@ -1,46 +1,13 @@
 import React from "react";
 import { LeadsKanban, type LeadItem } from "@/components/admin/LeadsKanban";
 import { Users, Clock, CheckCircle2, TrendingUp } from "lucide-react";
+import { getGlobalLeads } from "@/lib/crm/leads-store";
+
+export const dynamic = "force-dynamic";
 
 export default function AdminLeadsPage() {
   const dealershipId = "11111111-1111-1111-1111-111111111111";
-
-  // Mock initial leads dataset
-  const sampleLeads: LeadItem[] = [
-    {
-      id: "lead-1",
-      name: "Daniel Morrison",
-      email: "daniel.m@gmail.com",
-      phone: "0412 888 999",
-      vehicleTitle: "2021 Toyota RAV4 GXL AWD",
-      source: "WhatsApp Click",
-      stage: "new",
-      createdAt: "10 mins ago",
-      message: "Is this vehicle still available for inspection this Saturday?",
-    },
-    {
-      id: "lead-2",
-      name: "Amanda Watson",
-      email: "a.watson@outlook.com.au",
-      phone: "0423 456 789",
-      vehicleTitle: "2020 Hyundai i30 Active",
-      source: "Finance Enquiry",
-      stage: "contacted",
-      createdAt: "1 hour ago",
-      message: "Seeking weekly finance quote with $3,000 cash deposit.",
-    },
-    {
-      id: "lead-3",
-      name: "Marcus Vance",
-      email: "m.vance@yahoo.com.au",
-      phone: "0434 111 222",
-      vehicleTitle: "2019 Ford Ranger Wildtrak 4x4",
-      source: "Trade-In Request",
-      stage: "test_drive_booked",
-      createdAt: "Yesterday",
-      message: "Trading in 2016 Mazda 3 SP25 (approx 110,000 km).",
-    },
-  ];
+  const sampleLeads: LeadItem[] = getGlobalLeads();
 
   return (
     <div className="space-y-6">
