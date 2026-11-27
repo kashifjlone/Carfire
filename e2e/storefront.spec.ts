@@ -43,7 +43,7 @@ test.describe("Public Storefront & Buyer Journey", () => {
 
     // 3. Single Drive Away Price
     await expect(page.locator("text=Total Drive Away Price")).toBeVisible();
-    await expect(page.locator("text=$34,990")).toBeVisible();
+    await expect(page.locator("text=$34,990").first()).toBeVisible();
 
     // 4. WhatsApp Click-to-Chat button
     const whatsappBtn = page.locator("a:has-text('Chat on WhatsApp')");
