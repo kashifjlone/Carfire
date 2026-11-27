@@ -5,95 +5,15 @@ import Link from "next/link";
 import { Plus, FileSpreadsheet, Search, Filter } from "lucide-react";
 import { InventoryTable } from "@/components/admin/InventoryTable";
 import { AddVehicleModal } from "@/components/admin/AddVehicleModal";
+import { FacebookFeedCard } from "@/components/admin/FacebookFeedCard";
+import { SAMPLE_VEHICLES } from "@/lib/inventory/mock-data";
 import type { Vehicle } from "@/lib/types/inventory";
 
 export default function AdminInventoryPage() {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const dealershipId = "11111111-1111-1111-1111-111111111111";
   const branchId = "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa";
-
-  // Mock initial vehicle dataset
-  const sampleVehicles: Vehicle[] = [
-    {
-      id: "v-1",
-      dealership_id: dealershipId,
-      branch_id: branchId,
-      vin: "6T1AA11A11A111111",
-      stock_number: "S-1042",
-      make: "Toyota",
-      model: "RAV4",
-      year: 2021,
-      variant: "GXL AWD Hybrid",
-      body_type: "suv",
-      transmission: "automatic",
-      fuel_type: "hybrid",
-      odometer_km: 48500,
-      total_price_cents: 3499000,
-      egc_price_cents: 3250000,
-      publication_status: "published",
-      availability: "in_stock",
-      slug: "2021-toyota-rav4-gxl-s1042",
-      features: ["CarPlay", "Adaptive Cruise"],
-      imperfections: [],
-      ppsr_status: "clear",
-      statutory_warranty_class: "nsw_standard",
-      niche_attributes: {},
-      created_at: new Date().toISOString(),
-      updated_at: new Date().toISOString(),
-    },
-    {
-      id: "v-2",
-      dealership_id: dealershipId,
-      branch_id: branchId,
-      vin: "KMHD1234567890123",
-      stock_number: "S-1043",
-      make: "Hyundai",
-      model: "i30",
-      year: 2020,
-      variant: "Active",
-      body_type: "hatch",
-      transmission: "automatic",
-      fuel_type: "petrol",
-      odometer_km: 62000,
-      total_price_cents: 2199000,
-      publication_status: "published",
-      availability: "in_stock",
-      slug: "2020-hyundai-i30-s1043",
-      features: ["Apple CarPlay"],
-      imperfections: [],
-      ppsr_status: "clear",
-      statutory_warranty_class: "nsw_standard",
-      niche_attributes: {},
-      created_at: new Date().toISOString(),
-      updated_at: new Date().toISOString(),
-    },
-    {
-      id: "v-3",
-      dealership_id: dealershipId,
-      branch_id: branchId,
-      vin: "1FTFW1E84KFA12345",
-      stock_number: "S-1044",
-      make: "Ford",
-      model: "Ranger",
-      year: 2019,
-      variant: "Wildtrak 4x4",
-      body_type: "ute",
-      transmission: "automatic",
-      fuel_type: "diesel",
-      odometer_km: 89000,
-      total_price_cents: 4299000,
-      publication_status: "draft",
-      availability: "in_stock",
-      slug: "2019-ford-ranger-s1044",
-      features: ["Tow Bar", "Roller Shutter"],
-      imperfections: [],
-      ppsr_status: "clear",
-      statutory_warranty_class: "nsw_standard",
-      niche_attributes: {},
-      created_at: new Date().toISOString(),
-      updated_at: new Date().toISOString(),
-    },
-  ];
+  const sampleVehicles: Vehicle[] = SAMPLE_VEHICLES;
 
   return (
     <div className="space-y-6">
@@ -147,6 +67,9 @@ export default function AdminInventoryPage() {
           <div className="text-2xl font-black mt-1 text-blue-600">2</div>
         </div>
       </div>
+
+      {/* Facebook AIA Catalog Sync Card */}
+      <FacebookFeedCard />
 
       {/* Inventory Table */}
       <InventoryTable initialVehicles={sampleVehicles} dealershipId={dealershipId} />

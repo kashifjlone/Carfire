@@ -19,3 +19,4 @@
 | MVP-08 | Automated Playwright End-to-End Suite | §10.2 | verified | Playwright Chromium (9/9 E2E tests passing in 7.7s: Storefront, VDP, Inventory, CRM, Billing) | 2026-11-27 |
 | MKT-01 | SaaS Marketing Landing Page & Live Demo | §11 Phase 3 | verified | Next.js 15 App Router landing page, cardless trial modal, 12/12 Playwright tests passing | 2026-11-27 |
 | DOM-01 | Custom Domain Engine & DNS Challenge | §4.1, §11 Phase 3 | verified | /admin/domains, CNAME/TXT challenge, RLS migration, 14/14 Playwright tests passing | 2026-11-27 |
+| CAT-01 | Facebook AIA Catalog Feed Generator | §11 Phase 3, ADR-15 | verified | /api/feeds/facebook-aia.xml, ACL price compliance, 16/16 Playwright tests passing | 2026-11-27 |
