@@ -6,6 +6,7 @@ import {
   Users,
   CreditCard,
   Globe,
+  FileCheck,
   Settings,
   ExternalLink,
   Shield,
@@ -79,6 +80,14 @@ export default function AdminLayout({
           >
             <Globe className="w-4 h-4 text-cyan-400" />
             <span>Domains & DNS</span>
+          </Link>
+
+          <Link
+            href="/admin/compliance"
+            className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-800 hover:text-white transition text-slate-300"
+          >
+            <FileCheck className="w-4 h-4 text-emerald-400" />
+            <span>Compliance & Register</span>
           </Link>
 
           <div className="pt-4 pb-1">
