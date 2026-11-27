@@ -22,4 +22,4 @@
 | CAT-01 | Facebook AIA Catalog Feed Generator | §11 Phase 3, ADR-15 | verified | /api/feeds/facebook-aia.xml, ACL price compliance, 16/16 Playwright tests passing | 2026-11-27 |
 | COMP-01 | State Compliance Forms & Dealings Book | §11 Phase 4, §7.1 | verified | NSW Form 1, VIC Form 2, QLD Form 5, Dealings Register, 19/19 Playwright tests passing | 2026-11-27 |
 | TRD-01 | Online Trade-In Appraisal Widget & CRM Alert | §11 Phase 4, §2.4 | verified | 2-step VDP Trade-In widget, changeover price, CRM lead ingestion, 20/20 Playwright tests passing | 2026-11-27 |
-| DEP-01 | Production Deployment & Containerization | §11 Phase 4, §10 | verified | Dockerfile standalone build (13/13 routes), .dockerignore, docker-compose.yml, DEPLOYMENT_GUIDE.md | 2026-11-27 |
+| DEP-01 | Production Deployment & Containerization | §11 Phase 4, §10 | verified | Live on Vercel: https://carfire-australia.vercel.app/, Supabase Sydney (ap-southeast-2) connected, 20/20 Playwright pass | 2026-11-27 |
